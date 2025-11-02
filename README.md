@@ -1,38 +1,38 @@
 # Coldservice
 **Cold Service** provides innovative modular cold room solutions for design, installation, and maintenance. Our connected, energy-efficient systems meet the needs of food, pharmaceutical, and logistics industries with reliability, performance, and smart control.
 # 🧊 Cold Service – SSCI Solution of Cold
+# 🧊 Cold Service – SSCI Solution of Cold
 
-**Cold Service** est une plateforme web développée par **SSCI Solution of Cold** pour la conception et le suivi de chambres froides modulables et connectées.  
-Cette solution industrielle permet de gérer, superviser et optimiser la chaîne du froid grâce à la connectivité **Bluetooth** et au stockage **Firebase Cloud**.
+**Cold Service** is a web platform developed by **SSCI Solution of Cold** for the design and monitoring of modular and connected cold rooms.  
+This industrial solution enables real-time supervision and optimization of the cold chain through **Bluetooth connectivity** and **Firebase Cloud** integration.
 
-🌐 **Accéder à l’application :** [https://cold-service-othman.web.app](https://cold-service-othman.web.app)
-
----
-
-## 🚀 Fonctionnalités
-- Conception et paramétrage de chambres froides modulaires.  
-- Suivi en temps réel via **SSCIAPPBLUETOOTH** (application mobile).  
-- Gestion et enregistrement des données sur **Firebase**.  
-- Intégration des logiciels **Bitzer** (motorisation) et **Intercon** (gestion).  
-- Interface ergonomique, accessible sur tout support.
+🌐 **Live Application:** [https://cold-service-othman.web.app](https://cold-service-othman.web.app)
 
 ---
 
-## 🧰 Technologies utilisées
-- **Flutter** (front-end & app mobile)  
-- **Firebase** (base de données & hébergement)  
+## 🚀 Features
+- Design and configuration of modular cold rooms.  
+- Real-time monitoring via **SSCIAPPBLUETOOTH** (mobile application).  
+- Data management and cloud storage using **Firebase**.  
+- Integration with **Bitzer** (motorization) and **Intercon** (management) software.  
+- Responsive and user-friendly interface.
+
+---
+
+## 🧰 Technologies
+- **Flutter** (mobile & web interface)  
+- **Firebase** (database & hosting)  
 - **Bluetooth Low Energy (BLE)**  
-- **Intercon / Bitzer**  
+- **Intercon / Bitzer** integration  
 - **Cloud Firestore**
 
 ---
 
-## 👨‍💼 À propos
-Ce projet est développé par **Benhamamouch Othman**,  
-Fondateur et CEO de **SSCI Solution of Cold**, startup innovante basée à Oran (Algérie).  
+## 👨‍💼 About
+Developed by **Benhamamouch Othman**,  
+Founder and CEO of **SSCI Solution of Cold**, an innovative startup based in Oran, Algeria.
 
 ---
 
-## 📜 Licence
-© 2025 SSCI Solution of Cold — Tous droits réservés.
-
+## 📜 License
+© 2025 SSCI Solution of Cold — All rights reserved.
