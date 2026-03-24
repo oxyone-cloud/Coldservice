@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <title>Cold Service - SSCI Thermal Solutions</title>
+  <style>
+    body { margin: 0; background: #000a12; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+    
+    /* Dashboard Glassmorphism */
+    #dashboard {
+      position: absolute; top: 30px; left: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-left: 6px solid #00d4ff;
+      padding: 25px; border-radius: 12px;
+      color: white; width: 340px; z-index: 10;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+
+    h1 { margin: 0; font-size: 1.6rem; color: #00d4ff; letter-spacing: 1px; }
+    .tagline { margin: 15px 0; font-size: 0.95rem; line-height: 1.5; color: #a0c0d0; font-style: italic; }
+    
+    .telemetry { display: flex; justify-content: space-between; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;}
+    .data-box { text-align: center; }
+    .label { font-size: 0.65rem; color: #00d4ff; text-transform: uppercase; display: block; }
+    .value { font-size: 1.1rem; font-weight: bold; color: #fff; }
+
+    /* Zone des Badges Professionnels */
+    .badges {
+      position: absolute; bottom: 30px; right: 30px;
+      display: flex; gap: 15px; z-index: 10;
+    }
+    .badge-card {
+      background: rgba(10, 30, 50, 0.8); padding: 10px;
+      border-radius: 8px; text-align: center; text-decoration: none;
+      border: 1px solid #00d4ff; transition: 0.3s; width: 100px;
+    }
+    .badge-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #00d4ff; }
+    .badge-icon { width: 30px; }
+    .badge-text { display: block; color: white; font-size: 8px; margin-top: 5px; font-weight: bold;}
+  </style>
+</head>
+<body>
+
+  <div id="dashboard">
+    <div style="font-size: 0.7rem; color: #00ff88; margin-bottom: 5px;">● MONITORING ACTIF</div>
+    <h1>COLD SERVICE</h1>
+    <div class="tagline">
+      "Maîtriser le flux, garantir la chaîne : L'innovation thermique SSCI pour l'excellence industrielle."
+    </div>
+    
+    <div class="telemetry">
+      <div class="data-box"><span class="label">Température</span><span class="value">-18.5°C</span></div>
+      <div class="data-box"><span class="label">Stabilité</span><span class="value">99.2%</span></div>
+      <div class="data-box"><span class="label">Mode</span><span class="value">Givre</span></div>
+    </div>
+  </div>
+
+  <div class="badges">
+    <a href="https://developers.google.com/profile/badges/community/innovators/cloud/2021_member" target="_blank" class="badge-card">
+      <img class="badge-icon" src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png">
+      <span class="badge-text">CLOUD INNOVATOR</span>
+    </a>
+    <a href="https://developers.google.com/profile/badges/community/innovators/maps" target="_blank" class="badge-card">
+      <img class="badge-icon" src="https://www.gstatic.com/images/branding/product/2x/maps_64dp.png">
+      <span class="badge-text">MAPS INNOVATOR</span>
+    </a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Structure 3D (Chambre Froide)
+    const geometry = new THREE.BoxGeometry(8, 5, 5);
+    const edges = new THREE.EdgesGeometry(geometry);
+    const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x00d4ff, transparent: true, opacity: 0.5 }));
+    scene.add(line);
+
+    // Particules de froid
+    const pGeom = new THREE.BufferGeometry();
+    const pCount = 1000;
+    const pPos = new Float32Array(pCount * 3);
+    for(let i=0; i<pCount*3; i++) pPos[i] = (Math.random() - 0.5) * 15;
+    pGeom.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    const pMat = new THREE.PointsMaterial({ size: 0.03, color: 0xffffff });
+    const snow = new THREE.Points(pGeom, pMat);
+    scene.add(snow);
+
+    camera.position.z = 10;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      line.rotation.y += 0.002;
+      snow.rotation.y -= 0.001;
+      snow.position.y -= 0.01;
+      if (snow.position.y < -5) snow.position.y = 5;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
