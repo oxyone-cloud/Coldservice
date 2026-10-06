@@ -42,3 +42,7 @@ Founder and CEO of **SSCI Solution of Cold**, an innovative startup based in Ora
 ## 📜 License
 SSCI SOLUTION OF COLD © 2026 – v2026.1
 
+
+
+## Déploiement GCP
+Projet géré sur Google Cloud Shell ().
