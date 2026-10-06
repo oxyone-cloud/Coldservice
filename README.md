@@ -46,3 +46,7 @@ SSCI SOLUTION OF COLD © 2026 – v2026.1
 
 ## Déploiement GCP
 Projet géré sur Google Cloud Shell ().
+
+
+## Déploiement GCP
+Projet géré sur Google Cloud Shell ().
